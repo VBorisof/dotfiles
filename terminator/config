@@ -1,0 +1,216 @@
+[global_config]
+  borderless = True
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+  suppress_multiple_term_dialog = True
+  title_use_system_font = False
+  title_font = Ubuntu Mono 12
+[keybindings]
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  split_horiz = <Primary><Alt>h
+  split_vert = <Primary><Alt>v
+  line_up = <Primary>Up
+  line_down = <Primary>Down
+  broadcast_off = <Shift><Super>o
+  broadcast_group = <Shift><Super>g
+  broadcast_all = <Shift><Super>a
+  edit_window_title = None
+  edit_tab_title = <Primary><Alt>e
+  edit_terminal_title = None
+  layout_launcher = None
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.78
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+    font = Ubuntu Mono 13
+    foreground_color = "#00ff00"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
+    use_system_font = False
+  [[likeonicaws]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+    font = Ubuntu Mono 13
+    foreground_color = "#00ff00"
+    show_titlebar = False
+    scrollbar_position = hidden
+    exit_action = restart
+    use_custom_command = True
+    custom_command = ssh -R 52698:localhost:52698 -i /home/oma/Documents/Likeonic\ Workspace/Shadow/SSH-DE-AWS.pem ubuntu@3.120.244.30
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[test]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 376ed1f1-2b70-4512-83ed-5bc94bc6b07b
+      last_active_window = False
+      maximised = False
+      order = 0
+      parent = ""
+      position = 2924:524
+      size = 1552, 851
+      title = oma@petram:~/Documents/organizer
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 1111
+      ratio = 0.718164188752
+      type = HPaned
+    [[[child10]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 1792:80
+      size = 764, 1337
+      title = oma@petram:~/Code/Likeonic-Workspace/publish
+      type = Window
+    [[[child11]]]
+      active_page = 1
+      labels = == OUTPUT ==, == GIT ==, == POSTGRES ==, == EF ==, == DEPLOY ==
+      last_active_term = 179a6916-8693-4236-8bbb-c1b6495dc9a7, 9d877ee8-7089-404a-896c-3bae6807f090, ac00e213-3b3a-4ecd-ba21-c817baf367c5, 3d34b9a0-2e0d-43bf-8c72-423edda03f60, cc7d45ac-3730-4666-ab85-be10c4035dc2
+      order = 0
+      parent = child10
+      type = Notebook
+    [[[child14]]]
+      order = 2
+      parent = child11
+      position = 842
+      ratio = 0.651198762568
+      type = VPaned
+    [[[child19]]]
+      fullscreen = False
+      last_active_term = f7185f98-2eb5-48cd-875e-4546cfdbba0a
+      last_active_window = False
+      maximised = False
+      order = 0
+      parent = ""
+      position = 2560:318
+      size = 1920, 106
+      title = oma@petram:~
+      type = Window
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 101
+      ratio = 0.11938534279
+      type = VPaned
+    [[[child21]]]
+      fullscreen = False
+      last_active_term = 3180fe2c-e622-4bd0-9587-86437fc05684
+      last_active_window = False
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 2560, 1419
+      title = oma@petram:~
+      type = Window
+    [[[child4]]]
+      order = 1
+      parent = child2
+      position = 102
+      ratio = 0.137096774194
+      type = VPaned
+    [[[child7]]]
+      order = 1
+      parent = child1
+      position = 423
+      ratio = 0.5
+      type = VPaned
+    [[[terminal12]]]
+      order = 0
+      parent = child11
+      profile = default
+      type = Terminal
+      uuid = 179a6916-8693-4236-8bbb-c1b6495dc9a7
+    [[[terminal13]]]
+      order = 1
+      parent = child11
+      profile = default
+      type = Terminal
+      uuid = 9d877ee8-7089-404a-896c-3bae6807f090
+    [[[terminal15]]]
+      order = 0
+      parent = child14
+      profile = default
+      type = Terminal
+      uuid = ac00e213-3b3a-4ecd-ba21-c817baf367c5
+    [[[terminal16]]]
+      order = 1
+      parent = child14
+      profile = default
+      type = Terminal
+      uuid = 6f0170ee-870c-4781-9b5c-a4de440be8bd
+    [[[terminal17]]]
+      order = 3
+      parent = child11
+      profile = default
+      type = Terminal
+      uuid = 3d34b9a0-2e0d-43bf-8c72-423edda03f60
+    [[[terminal18]]]
+      order = 4
+      parent = child11
+      profile = default
+      type = Terminal
+      uuid = cc7d45ac-3730-4666-ab85-be10c4035dc2
+    [[[terminal20]]]
+      order = 0
+      parent = child19
+      profile = default
+      type = Terminal
+      uuid = f7185f98-2eb5-48cd-875e-4546cfdbba0a
+    [[[terminal22]]]
+      order = 0
+      parent = child21
+      profile = default
+      type = Terminal
+      uuid = 3180fe2c-e622-4bd0-9587-86437fc05684
+    [[[terminal3]]]
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = fec7923c-e4d4-4a9b-b1ea-bf9601b2ec0d
+    [[[terminal5]]]
+      order = 0
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = ca6614a8-15ef-4598-bff0-5e538da4acf3
+    [[[terminal6]]]
+      order = 1
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = e6fedf54-cdb6-42e8-8760-8f2d16b184ca
+    [[[terminal8]]]
+      order = 0
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = cfdf2baa-f218-47a9-8cad-35c2835c87c7
+    [[[terminal9]]]
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = 376ed1f1-2b70-4512-83ed-5bc94bc6b07b
+[plugins]
