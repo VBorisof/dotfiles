@@ -41,13 +41,27 @@ set numberwidth=4
 
 set clipboard=unnamedplus
 
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
+
+"let f:OmniSharp_highlighting = 2
 
 """"""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """"""""""""""""""""""""""""""""""""""""
 call plug#begin()
 
-Plug 'https://github.com/wincent/command-t'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'https://github.com/dense-analysis/ale'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
 call plug#end()
+
+
+""""""""""""""""""""""""""""""""""""""""
+" KEYMAPS
+""""""""""""""""""""""""""""""""""""""""
+map <Enter> o<Esc>
+map <O> O<Esc>
 
