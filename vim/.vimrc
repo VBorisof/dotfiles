@@ -65,3 +65,13 @@ call plug#end()
 map <Enter> o<Esc>
 map <O> O<Esc>
 
+
+""""""""""""""""""""""""""""""""""""""""
+" THEME
+""""""""""""""""""""""""""""""""""""""""
+set colorcolumn=81
+highlight ColorColumn ctermbg=17
+
+set cursorline
+highlight CursorLine cterm=none ctermbg=17 
+
