@@ -65,6 +65,7 @@ call plug#end()
 map <Enter> o<Esc>
 map <O> O<Esc>
 
+nnoremap ; :
 
 """"""""""""""""""""""""""""""""""""""""
 " THEME
