@@ -35,19 +35,6 @@
     scrollbar_position = hidden
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
-  [[likeonicaws]]
-    background_darkness = 0.9
-    background_type = transparent
-    cursor_shape = ibeam
-    cursor_color = "#aaaaaa"
-    font = Ubuntu Mono 13
-    foreground_color = "#00ff00"
-    show_titlebar = False
-    scrollbar_position = hidden
-    exit_action = restart
-    use_custom_command = True
-    custom_command = ssh -R 52698:localhost:52698 -i /home/oma/Documents/Likeonic\ Workspace/Shadow/SSH-DE-AWS.pem ubuntu@3.120.244.30
-    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
