@@ -47,6 +47,13 @@ let g:ale_linters = {
 
 "let f:OmniSharp_highlighting = 2
 
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab
+
+set splitbelow
+set splitright
+
 """"""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """"""""""""""""""""""""""""""""""""""""
@@ -55,6 +62,9 @@ call plug#begin()
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'https://github.com/dense-analysis/ale'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'chrisbra/Colorizer'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -62,17 +72,64 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 " KEYMAPS
 """"""""""""""""""""""""""""""""""""""""
-map <Enter> o<Esc>
 map <O> O<Esc>
 
 nnoremap ; :
 
+nnoremap <C-l> :vertical resize +5<CR> 
+nnoremap <C-h> :vertical resize -5<CR> 
+nnoremap <C-k> :res +5<CR>
+nnoremap <C-j> :res -5<CR>
+
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {<CR><CR>}<C-O>k<Tab>
+
+nmap <C-B> :YcmCompleter GoToDefinition<CR>
+nmap <C-T> <Plug>(YCMFindSymbolInWorkspace)
+nmap <F2> :NERDTree<CR>
+nmap <F12> :YcmCompleter GoToReferences<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+" THEME
+
+inoremap ( ()<left>
+inoremap () ()<left>
+inoremap [ []<left>
+inoremap { {<CR><CR>}<C-O>k<Tab>
+
+
 """"""""""""""""""""""""""""""""""""""""
 " THEME
 """"""""""""""""""""""""""""""""""""""""
-set colorcolumn=81
-highlight ColorColumn ctermbg=17
+colorscheme MainTheme
 
-set cursorline
-highlight CursorLine cterm=none ctermbg=17 
+"Cursor settings:
+"  1 -> blinking block
+"  2 -> solid block 
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+let &t_SI.="\e[5 q" " INSERT mode
+let &t_SR.="\e[5 q" " REPLACE mode
+let &t_EI.="\e[1 q" " NORMAL mode
+
+filetype plugin on
+
+
+""""""""""""""""""""""""""""""""""""""""
+" functions. TODO: Move em.
+""""""""""""""""""""""""""""""""""""""""
+function! s:CustomizeYcmQuickFixWindow()
+  " Move the window to the left of the screen.
+  wincmd L
+  " Set the window width.
+  100wincmd |
+endfunction
+
+autocmd User YcmQuickFixOpened call s:CustomizeYcmQuickFixWindow()
 

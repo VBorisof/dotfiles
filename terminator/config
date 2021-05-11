@@ -1,4 +1,5 @@
 [global_config]
+  handle_size = 1
   borderless = True
   scroll_tabbar = True
   homogeneous_tabbar = False
@@ -21,6 +22,7 @@
   edit_tab_title = <Primary><Alt>e
   edit_terminal_title = None
   layout_launcher = None
+  help = <Primary><Shift><Alt>F1
 [profiles]
   [[default]]
     icon_bell = False
