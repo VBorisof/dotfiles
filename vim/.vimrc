@@ -47,12 +47,14 @@ let g:ale_linters = {
 
 "let f:OmniSharp_highlighting = 2
 
-:set tabstop=4
-:set shiftwidth=4
-:set expandtab
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 set splitbelow
 set splitright
+
+":Minimap
 
 """"""""""""""""""""""""""""""""""""""""
 " PLUGINS
@@ -65,6 +67,8 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'preservim/nerdtree'
+Plug 'severin-lemaignan/vim-minimap'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 
@@ -86,21 +90,12 @@ noremap! <C-h> <C-w>
 
 inoremap ( ()<left>
 inoremap [ []<left>
-inoremap { {<CR><CR>}<C-O>k<Tab>
+"inoremap { {<CR><CR>}<C-O>k<Tab>
 
 nmap <C-B> :YcmCompleter GoToDefinition<CR>
 nmap <C-T> <Plug>(YCMFindSymbolInWorkspace)
 nmap <F2> :NERDTree<CR>
 nmap <F12> :YcmCompleter GoToReferences<CR>
-
-""""""""""""""""""""""""""""""""""""""""
-" THEME
-
-inoremap ( ()<left>
-inoremap () ()<left>
-inoremap [ []<left>
-inoremap { {<CR><CR>}<C-O>k<Tab>
-
 
 """"""""""""""""""""""""""""""""""""""""
 " THEME
@@ -132,4 +127,23 @@ function! s:CustomizeYcmQuickFixWindow()
 endfunction
 
 autocmd User YcmQuickFixOpened call s:CustomizeYcmQuickFixWindow()
+
+
+""""""""""""""""""""""""""""""""""""""""
+" Templates
+""""""""""""""""""""""""""""""""""""""""
+augroup templates
+  au!
+  " read in template files
+  autocmd BufNewFile *.* silent! execute '0r $HOME/.vim/templates/skeleton.'.expand("<afile>:e")
+  autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""
+" C# Bindings...
+""""""""""""""""""""""""""""""""""""""""
+autocmd FileType cs nmap <C-B> :OmniSharpGotoDefinition<CR>
+autocmd FileType cs nmap ga :OmniSharpGetCodeActions<CR>
+autocmd FileType cs nmap rn :OmniSharpRename<CR>
+autocmd FileType cs nmap fu :OmniSharpFixUsings<CR>
 
