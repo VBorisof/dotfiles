@@ -1,8 +1,3 @@
-" TODO:
-"
-"
-" source $VIMRUNTIME/defaults.vim
-
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
