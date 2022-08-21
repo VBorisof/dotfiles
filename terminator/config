@@ -35,11 +35,14 @@
     scrollbar_position = hidden
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
+  [[main]]
+    cursor_color = "#aaaaaa"
 [layouts]
   [[default]]
     [[[child1]]]
       parent = window0
       type = Terminal
+      profile = default
     [[[window0]]]
       parent = ""
       type = Window
@@ -202,4 +205,85 @@
       profile = default
       type = Terminal
       uuid = 376ed1f1-2b70-4512-83ed-5bc94bc6b07b
+  [[default-vsplit]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 1920:0
+      maximised = False
+      fullscreen = False
+      size = 1280, 1419
+      title = oma@petram:~
+      last_active_term = 893312df-a50a-4668-9646-77fc36d2587b
+      last_active_window = True
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 877
+      ratio = 0.687843137254902
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = 893312df-a50a-4668-9646-77fc36d2587b
+      command = '/bin/bash -c "vim ."'
+      directory = /home/oma/Code/Servee-Workspace/servee-server
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = fab8a827-efba-462e-b870-da8b0445d218
+      command = '/bin/bash -c "ll"'
+      directory = /home/oma/Code/Servee-Workspace/servee-server
+  [[main]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 384:373
+      maximised = False
+      fullscreen = False
+      size = 1532, 996
+      title = oma@petram:~/Programs/scripts
+      last_active_term = 908d78f0-16d4-4a3b-acb9-afff0d4aac7b
+      last_active_window = False
+    [[[child1]]]
+      type = VPaned
+      parent = child0
+      order = 0
+      position = 208
+      ratio = 0.20988900100908173
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = New Profile
+      uuid = a13b8be8-93a7-4725-923b-baae6c6b387c
+      command = htop
+    [[[child3]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 103
+      ratio = 0.13171355498721227
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = default
+      uuid = 63c2b80f-82a6-4fef-b8d7-2625504a28b8
+      command = nordvpn-connect.sh
+      directory = ""
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      profile = default
+      uuid = 908d78f0-16d4-4a3b-acb9-afff0d4aac7b
+      command = ""
+      directory = /home/oma/Documents
 [plugins]
