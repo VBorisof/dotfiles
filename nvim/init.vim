@@ -34,6 +34,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""
 " SETUP  
 """"""""""""""""""""""""""""""""""""""""
+filetype plugin on
+
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -98,6 +100,85 @@ let g:session_command_aliases = 1
 
 set wildmenu
 
+
+" Tagbar
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#cancel() : "\<Esc>"
+inoremap <silent><expr> <C-Space> coc#start()
+inoremap <silent><expr> <C-S-Space> :call CocActionAsync('showSignatureHelp')<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+" PLUGINS
+""""""""""""""""""""""""""""""""""""""""
+call plug#begin()
+
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'https://github.com/dense-analysis/ale'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'chrisbra/Colorizer'
+Plug 'preservim/nerdtree'
+Plug 'severin-lemaignan/vim-minimap'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Raimondi/delimitMate'
+Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"" Vim-Session
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+
+"" Snippets
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+
+"" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""
+" KEYMAPS
+""""""""""""""""""""""""""""""""""""""""
+map <O> O<Esc>
+
+nnoremap <C-l> :vertical resize +5<CR> 
+nnoremap <C-h> :vertical resize -5<CR> 
+nnoremap <C-k> :res +5<CR>
+nnoremap <C-j> :res -5<CR>
+
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+
+nmap <F2> :NERDTree<CR>
+
+nmap <silent> <C-B> <Plug>(coc-definition)
+nmap <silent> <F12> <Plug>(coc-references)
+nmap <C-T> <Plug>(YCMFindSymbolInWorkspace)
+
+""""""""""""""""""""""""""""""""""""""""
+" THEME
+""""""""""""""""""""""""""""""""""""""""
+colorscheme MainTheme
+
+"Cursor settings:
+"  1 -> blinking block
+"  2 -> solid block 
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+let &t_SI.="\e[5 q" " INSERT mode
+let &t_SR.="\e[5 q" " REPLACE mode
+let &t_EI.="\e[1 q" " NORMAL mode
+
 " Status Line
 set laststatus=2
 
@@ -151,91 +232,6 @@ else
 endif
 
 command! FixWhitespace :%s/\s\+$//e
-
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#cancel() : "\<Esc>"
-inoremap <silent><expr> <C-Space> coc#start()
-inoremap <silent><expr> <C-S-Space> :call CocActionAsync('showSignatureHelp')<CR>
-
-""""""""""""""""""""""""""""""""""""""""
-" PLUGINS
-""""""""""""""""""""""""""""""""""""""""
-call plug#begin()
-
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'https://github.com/dense-analysis/ale'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-Plug 'chrisbra/Colorizer'
-Plug 'preservim/nerdtree'
-Plug 'severin-lemaignan/vim-minimap'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-
-"" Snippets
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-
-"" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-
-call plug#end()
-
-
-""""""""""""""""""""""""""""""""""""""""
-" KEYMAPS
-""""""""""""""""""""""""""""""""""""""""
-map <O> O<Esc>
-
-nnoremap <C-l> :vertical resize +5<CR> 
-nnoremap <C-h> :vertical resize -5<CR> 
-nnoremap <C-k> :res +5<CR>
-nnoremap <C-j> :res -5<CR>
-
-noremap! <C-BS> <C-w>
-noremap! <C-h> <C-w>
-
-"inoremap ( ()<left>
-"inoremap [ []<left>
-"inoremap { {<CR><CR>}<C-O>k<Tab>
-
-nmap <C-B> :YcmCompleter GoToDefinition<CR>
-nmap <C-T> <Plug>(YCMFindSymbolInWorkspace)
-nmap <F2> :NERDTree<CR>
-nmap <F12> :YcmCompleter GoToReferences<CR>
-
-""""""""""""""""""""""""""""""""""""""""
-" THEME
-""""""""""""""""""""""""""""""""""""""""
-colorscheme MainTheme
-
-"Cursor settings:
-"  1 -> blinking block
-"  2 -> solid block 
-"  3 -> blinking underscore
-"  4 -> solid underscore
-"  5 -> blinking vertical bar
-"  6 -> solid vertical bar
-let &t_SI.="\e[5 q" " INSERT mode
-let &t_SR.="\e[5 q" " REPLACE mode
-let &t_EI.="\e[1 q" " NORMAL mode
-
-filetype plugin on
 
 
 """"""""""""""""""""""""""""""""""""""""
