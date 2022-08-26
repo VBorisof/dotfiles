@@ -97,7 +97,6 @@ let s:colors.light_gray = { 'gui': 'NONE', 'cterm': 250  }
 let s:colors.dark_gray = { 'gui': '#888888', 'cterm': 102  }
 let s:colors.light_blue = { 'gui': '#5552ff', 'cterm': 63 }
 let s:colors.almost_white = { 'gui': '#dae3ed', 'cterm': 254 }
-
 let s:colors.none    = { 'gui': 'NONE', 'cterm': 'NONE'  }
 
 " Normal modes
@@ -113,10 +112,6 @@ call s:Col('cursorim', 'base3', 'base1')
 call s:Col('LineNr', 'base8')
 call s:Col('SignColumn', 'base3', 'base3')
 call s:Col('ColorColumn', 'base0', 'base24')
-let s:colors.light_blue = { 'gui': '#5552ff', 'cterm': 63 }
-let s:colors.almost_white = { 'gui': '#dae3ed', 'cterm': 254 }
-
-let s:colors.none    = { 'gui': 'NONE', 'cterm': 'NONE'  }
 
 " Normal modes
 call s:Col('Normal', 'base0', 'base23')
@@ -171,7 +166,7 @@ call s:Col('Todo', 'base13')
 " The column separating vertical splits.
 call s:Col('VertSplit', 'base3')
 call s:Col('StatusLineNC', 'base0', 'base8')
-call s:Attr('StatusLineNC', 'bold')
+" call s:Attr('StatusLineNC', 'bold')
 
 " Matching parenthesis.
 call s:Col('MatchParen', 'acid_green')
@@ -250,7 +245,7 @@ call s:Col('GitGutterChangeDelete', 'orange', 'base3')
 " vim-better-whitespace
 call s:Col('ExtraWhitespace', 'violet', 'yellow')
 
-" Cleanup =====================================================================
+" Cleanup ======================================================================
 
 unlet s:colors
 

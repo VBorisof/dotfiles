@@ -90,8 +90,6 @@ set directory=/home/oma/.vimbackups//
 set backupdir=/home/oma/.vimbackups//
 set undodir=/home/oma/.vimbackups//
 
-":Minimap
-
 " Session Management
 let g:session_directory = "~/.config/nvim/session"
 let g:session_autoload = "no"
@@ -99,7 +97,6 @@ let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
 set wildmenu
-
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -109,6 +106,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#cancel() : "\<Esc>"
 inoremap <silent><expr> <C-Space> coc#start()
 inoremap <silent><expr> <C-S-Space> :call CocActionAsync('showSignatureHelp')<CR>
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 """"""""""""""""""""""""""""""""""""""""
 " PLUGINS
@@ -120,7 +118,6 @@ Plug 'https://github.com/dense-analysis/ale'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'preservim/nerdtree'
-Plug 'severin-lemaignan/vim-minimap'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
@@ -161,7 +158,10 @@ nmap <F2> :NERDTree<CR>
 
 nmap <silent> <C-B> <Plug>(coc-definition)
 nmap <silent> <F12> <Plug>(coc-references)
-nmap <C-T> <Plug>(YCMFindSymbolInWorkspace)
+nmap <silent> rn <Plug>(coc-rename)
+
+let g:ctrlp_map = '<C-T>'
+let g:ctrlp_cmd = 'CtrlP'
 
 """"""""""""""""""""""""""""""""""""""""
 " THEME
