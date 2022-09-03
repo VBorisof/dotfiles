@@ -7,7 +7,7 @@ ZSH_THEME="strug"
 
 CASE_SENSITIVE="true"
 
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.

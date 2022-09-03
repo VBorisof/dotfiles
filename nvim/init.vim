@@ -258,8 +258,10 @@ augroup templates
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""
-" C# Bindings...
+" C# Setup & Bindings...
 """"""""""""""""""""""""""""""""""""""""
+let g:OmniSharp_server_use_net6=1
+
 autocmd FileType cs nmap <C-B> :OmniSharpGotoDefinition<CR>
 autocmd FileType cs nmap ga :OmniSharpGetCodeActions<CR>
 autocmd FileType cs nmap rn :OmniSharpRename<CR>
