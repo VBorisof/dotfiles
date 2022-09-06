@@ -66,7 +66,6 @@ let g:ale_linters = {
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 let g:lsc_auto_map = v:true
 
-
 set completeopt=longest,menuone
 setlocal omnifunc=go#complete#Complete
 
@@ -82,9 +81,6 @@ set splitright
 filetype indent on
 set autoindent
 
-let no_buffers_menu=1
-nmap <S-l> :bn<CR>
-nmap <S-h> :bp<CR>
 
 set directory=/home/oma/.vimbackups//
 set backupdir=/home/oma/.vimbackups//
@@ -145,6 +141,11 @@ call plug#end()
 " KEYMAPS
 """"""""""""""""""""""""""""""""""""""""
 map <O> O<Esc>
+
+let no_buffers_menu=1
+nmap <S-l> :bn<CR>
+nmap <S-h> :bp<CR>
+map qb :bn<CR>:bd #<CR>
 
 nnoremap <C-l> :vertical resize +5<CR> 
 nnoremap <C-h> :vertical resize -5<CR> 
