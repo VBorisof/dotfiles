@@ -56,6 +56,8 @@ set ignorecase
 set smartcase
 
 set relativenumber
+set nu rnu
+set nowrap
 set numberwidth=4
 
 set clipboard=unnamedplus
