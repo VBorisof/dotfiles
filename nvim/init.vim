@@ -157,6 +157,8 @@ nnoremap <C-j> :res -5<CR>
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
+nmap <C-a> GVgg
+
 nmap <F2> :NERDTree<CR>
 
 nmap <silent> <C-B> <Plug>(coc-definition)
