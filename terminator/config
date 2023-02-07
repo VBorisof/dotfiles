@@ -1,11 +1,8 @@
 [global_config]
-  handle_size = 1
   borderless = True
   scroll_tabbar = True
   homogeneous_tabbar = False
   suppress_multiple_term_dialog = True
-  title_use_system_font = False
-  title_font = Ubuntu Mono 12
 [keybindings]
   go_up = <Alt>k
   go_down = <Alt>j
@@ -28,7 +25,6 @@
     icon_bell = False
     background_darkness = 0.78
     cursor_shape = ibeam
-    cursor_color = "#aaaaaa"
     font = Ubuntu Mono 13
     foreground_color = "#00ff00"
     show_titlebar = False
@@ -36,7 +32,6 @@
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
   [[main]]
-    cursor_color = "#aaaaaa"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -244,32 +239,32 @@
       type = Window
       parent = ""
       order = 0
-      position = 384:373
+      position = 360:320
       maximised = False
       fullscreen = False
-      size = 1532, 996
-      title = oma@petram:~/Programs/scripts
+      size = 1556, 967
+      title = main-terminal
       last_active_term = 908d78f0-16d4-4a3b-acb9-afff0d4aac7b
-      last_active_window = False
+      last_active_window = True
     [[[child1]]]
       type = VPaned
       parent = child0
       order = 0
-      position = 208
-      ratio = 0.20988900100908173
+      position = 308
+      ratio = 0.3201663201663202
     [[[terminal2]]]
       type = Terminal
       parent = child1
       order = 0
-      profile = New Profile
+      profile = default
       uuid = a13b8be8-93a7-4725-923b-baae6c6b387c
       command = htop
     [[[child3]]]
       type = VPaned
       parent = child1
       order = 1
-      position = 103
-      ratio = 0.13171355498721227
+      position = 88
+      ratio = 0.13476263399693722
     [[[terminal4]]]
       type = Terminal
       parent = child3
@@ -277,7 +272,6 @@
       profile = default
       uuid = 63c2b80f-82a6-4fef-b8d7-2625504a28b8
       command = nordvpn-connect.sh
-      directory = ""
     [[[terminal5]]]
       type = Terminal
       parent = child3
@@ -285,5 +279,4 @@
       profile = default
       uuid = 908d78f0-16d4-4a3b-acb9-afff0d4aac7b
       command = ""
-      directory = /home/oma/Documents
 [plugins]

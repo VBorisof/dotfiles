@@ -192,7 +192,7 @@ assign [title="GL Playground"] 2
 for_window [title="Game"] floating enable
 assign [title="Game"] 2
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/oma/.config/i3/ws-1.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/oma/.config/i3/ws-1.json'"
 exec --no-startup-id "firefox"
 exec --no-startup-id "Telegram"
 exec --no-startup-id "subl"
