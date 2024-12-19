@@ -84,7 +84,7 @@ let s:colors.base24 = { 'gui': '#3a3c3e', 'cterm': 237 }
 " Other colors.
 let s:colors.white   = { 'gui': '#ffffff', 'cterm': 231 }
 let s:colors.red     = { 'gui': '#c23127', 'cterm': 124 }
-let s:colors.orange  = { 'gui': '#ff9599', 'cterm': 208 }
+let s:colors.orange  = { 'gui': '#f27922', 'cterm': 208 }
 let s:colors.yellow  = { 'gui': '#edb443', 'cterm': 214 }
 let s:colors.magenta = { 'gui': '#888ca6', 'cterm': 67  }
 let s:colors.violet  = { 'gui': '#4e5166', 'cterm': 60  }
@@ -92,7 +92,7 @@ let s:colors.blue    = { 'gui': '#195466', 'cterm': 24  }
 let s:colors.cyan    = { 'gui': '#33859E', 'cterm': 44  }
 let s:colors.green   = { 'gui': '#2aa889', 'cterm': 78  }
 let s:colors.acid_green = { 'gui': '#00ff00', 'cterm': 10  }
-let s:colors.dark_blue  = { 'gui': 'NONE', 'cterm': 17  }
+let s:colors.dark_blue  = { 'gui': '#0b102e', 'cterm': 17  }
 let s:colors.light_gray = { 'gui': 'NONE', 'cterm': 250  }
 let s:colors.dark_gray = { 'gui': '#888888', 'cterm': 102  }
 let s:colors.light_blue = { 'gui': '#5552ff', 'cterm': 63 }
@@ -245,15 +245,14 @@ call s:Col('GitGutterChangeDelete', 'orange', 'base3')
 " vim-better-whitespace
 call s:Col('ExtraWhitespace', 'violet', 'yellow')
 
-" Cleanup ======================================================================
-
-unlet s:colors
-
-" End of gotham-esque settings
 
 set colorcolumn=81
 highlight ColorColumn ctermbg=17
 
 set cursorline
 highlight CursorLine cterm=none ctermbg=17 
+
+" Cleanup ======================================================================
+
+unlet s:colors
 

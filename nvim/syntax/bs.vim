@@ -1,0 +1,5 @@
+syntax match Comment "//.*$"
+syntax region Comment start="/\*" end="\*/"
+syntax match Keyword "\<import\>\|\<if\>\|\<else\>\|\<at\>\|\<once\>\|\<then\>\|\<scene\>\|\<actor\>\|\<entity\>\|\<item\>\|\<flags\>\|\<verb\>\|\<use\>\|\<on\>\|\<animations\>\|\<nil\>\|\<var\>\|\<and\>\|\<or\>\|\<while\>\|\<for\>\|\<fun\>\|\<return\>\|\<true\>\|\<false\>|\<async\>"
+syntax match String  "\".*\""
+syntax match Todo    "TODO*"

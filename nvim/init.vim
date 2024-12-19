@@ -30,15 +30,17 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
-
 """"""""""""""""""""""""""""""""""""""""
 " SETUP  
 """"""""""""""""""""""""""""""""""""""""
 filetype plugin on
 
+" let g:gutentags_ctags_extra_args = ['--tag-relative', '--fields=+l', '--extras=+q', '--regex-c=/TODO/']
+
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -65,8 +67,8 @@ set clipboard=unnamedplus
 let g:ale_linters = {
 \ 'cs': ['OmniSharp']
 \}
-let g:lsc_server_commands = {'dart': 'dart_language_server'}
-let g:lsc_auto_map = v:true
+" let g:lsc_server_commands = {'dart': 'dart_language_server'}
+" let g:lsc_auto_map = v:true
 
 set completeopt=longest,menuone
 setlocal omnifunc=go#complete#Complete
@@ -84,9 +86,9 @@ filetype indent on
 set autoindent
 
 
-set directory=/home/oma/.vimbackups//
-set backupdir=/home/oma/.vimbackups//
-set undodir=/home/oma/.vimbackups//
+set directory=~/.vimbackups//
+set backupdir=~/.vimbackups//
+set undodir=~/.vimbackups//
 
 " Session Management
 let g:session_directory = "~/.config/nvim/session"
@@ -103,39 +105,51 @@ let g:tagbar_autofocus = 1
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#cancel() : "\<Esc>"
 inoremap <silent><expr> <C-Space> coc#start()
-inoremap <silent><expr> <C-S-Space> :call CocActionAsync('showSignatureHelp')<CR>
+"inoremap <silent> <C-i> <Esc>:call CocActionAsync('showSignatureHelp')<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 """"""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """"""""""""""""""""""""""""""""""""""""
 call plug#begin()
-
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'https://github.com/dense-analysis/ale'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'preservim/nerdtree'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'davidhalter/jedi-vim'
+Plug 'PeterRincker/vim-argumentative'
+Plug 'beyondmarc/hlsl.vim'
+Plug 'mfussenegger/nvim-jdtls'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'nvim-neotest/nvim-nio'
 "" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-session'
 
 "" Snippets
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
+"Plug 'majutsushi/tagbar'
+"Plug 'ludovicchabant/vim-gutentags'
+
+"Plug 'SirVer/ultisnips'
+
+"Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 "" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
+Plug 'rktjmp/lush.nvim'
+
+packadd cfilter
 
 call plug#end()
 
@@ -158,6 +172,8 @@ noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
 nmap <C-a> GVgg
+map <C-Del> dd
+map <C-d> Vyp
 
 nmap <F2> :NERDTree<CR>
 
@@ -168,9 +184,15 @@ nmap <silent> rn <Plug>(coc-rename)
 let g:ctrlp_map = '<C-T>'
 let g:ctrlp_cmd = 'CtrlP'
 
+vnoremap p "_dP
+
+nmap ]] :cnext<CR>
+nmap [[ :cprev<CR>
+
 """"""""""""""""""""""""""""""""""""""""
 " THEME
 """"""""""""""""""""""""""""""""""""""""
+set termguicolors
 colorscheme MainTheme
 
 "Cursor settings:
@@ -271,9 +293,25 @@ autocmd FileType cs nmap <C-B> :OmniSharpGotoDefinition<CR>
 autocmd FileType cs nmap ga :OmniSharpGetCodeActions<CR>
 autocmd FileType cs nmap rn :OmniSharpRename<CR>
 autocmd FileType cs nmap fu :OmniSharpFixUsings<CR>
+autocmd FileType cs imap <C-]> <ESC>:OmniSharpSignatureHelp<CR>a
 
+let g:OmniSharp_popup_options = {
+\ 'winblend': 30,
+\ 'winhl': 'Normal:Normal,FloatBorder:Special',
+\ 'border': 'rounded'
+\}
 
-""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
+nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
+nnoremap <silent> <F11> <Cmd>lua require'dap'.step_into()<CR>
+nnoremap <silent> <F12> <Cmd>lua require'dap'.step_out()<CR>
+nnoremap <silent> <Leader>b <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
+nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+
+"""""""""""""""""""""""""""""""""""""""".
 " Go Setup & Bindings...
 """"""""""""""""""""""""""""""""""""""""
 autocmd FileType go nmap rn :GoRename<CR>
@@ -303,7 +341,7 @@ let g:go_auto_type_info = 1
 """"""""""""""""""""""""""""""""""""""""
 " Html Bindings...
 """"""""""""""""""""""""""""""""""""""""
-autocmd FileType html nmap ;! i<!DOCTYPE html><CR>
+autocmd filetype html nmap ;! i<!doctype html><cr>
 autocmd FileType html nmap ;html i<html></html><ESC>F<i
 autocmd FileType html nmap ;tit i<title></title><ESC>F<i
 autocmd FileType html nmap ;head i<head></head><ESC>F<i
@@ -316,3 +354,4 @@ autocmd FileType html nmap ;4 i<h4></h4><ESC>F<i
 autocmd FileType html nmap ;5 i<h5></h5><ESC>F<i
 autocmd FileType html nmap ;6 i<h6></h6><ESC>F<i
 
+lua require('init')

@@ -54,7 +54,7 @@ alias cal='cal -m'
 alias i3lock='i3lock --color=000000'
 alias dmenu='dmenu -nb "#000" -nf "#eee" -sb "#0f0" -sf "#00f"'
 
-alias ytdl-mp3='youtube-dl -x --audio-format=mp3 -o "%(title)s.%(ext)s"' 
+alias ytdl-mp3='yt-dlp -x --audio-format=mp3 -o "%(title)s.%(ext)s"' 
 alias espeak='espeak -v en-us -p 10 -g 5 -s 200'
 
 alias vim='nvim'
@@ -62,7 +62,10 @@ alias git='EDITOR=nvim git'
 alias gl='git log --oneline --all --graph --decorate $*'
 alias gitfc='git fetch && git checkout' 
 alias gitdev='git fetch && git checkout dev && git pull'
-alias pdf='foxitreader'
+alias pdf='zathura'
+
+alias mount='sudo mount'
+alias umount='sudo umount'
 
 export EDITOR=nvim
 
