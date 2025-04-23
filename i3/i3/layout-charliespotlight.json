@@ -1,0 +1,94 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "none",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 458,
+       "width": 722,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "oma@petram:~/Code/BetaProjects/CharlieSpotlight/Beta",
+    "percent": 0.6248046875,
+    "swallows": [
+       {
+       // "class": "^Terminator$",
+       // "instance": "^terminator$",
+       // "machine": "^petram$",
+       // "title": "^oma\\@petram\\:\\~\\/Code\\/BetaProjects\\/CharlieSpotlight\\/Beta$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.3751953125,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "marks": [],
+            "percent": 0.721015514809591,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "user_off",
+                    "geometry": {
+                       "height": 1080,
+                       "width": 1920,
+                       "x": 3040,
+                       "y": 1300
+                    },
+                    "marks": [],
+                    "name": "[2] Editor",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       // "class": "^aced$",
+                       // "instance": "^aced$",
+                       // "machine": "^petram$",
+                       // "title": "^\\[2\\]\\ Editor$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "none",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 458,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "dotnet run",
+            "percent": 0.278984485190409,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "machine": "^petram$",
+               // "title": "^dotnet\\ run$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

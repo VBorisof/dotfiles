@@ -15,7 +15,7 @@ set $sup Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:ubuntu mono 11
+font pango:ubuntu mono 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -23,11 +23,7 @@ font pango:ubuntu mono 11
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend.
-exec --no-startup-id xss-lock --transfer-sleep-lock --i3lock --nofork
-
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend. exec --no-startup-id xss-lock --transfer-sleep-lock --i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -61,7 +57,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# alternatively, you can use the cursor keys:
+# move 
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -79,13 +75,13 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+space focus mode_toggle
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# focus the parent container
+bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -166,6 +162,7 @@ exec_always "xset s off"
 exec_always "xset -dpms"
 exec_always "xset b 100 1 50"
 exec_always setxkbmap -layout us,ru -option 'grp:win_space_toggle'
+exec_always setxkbmap -option compose:rwin
 
 
 # class                 border  backgr. text    indicator child_border
@@ -174,28 +171,31 @@ client.focused_inactive #000000 #000000 #5c5c5c #484e50   #000000
 client.unfocused        #000000 #000000 #5c5c5c #292d2e   #000000
 client.urgent           #000000 #6b1200 #ffffff #900000   #000000
 client.placeholder      #000000 #000000 #ffffff #000000   #000000
+client.background       #000000 
 
-client.background       #000000
-
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status #--config ~/.config/i3status-config
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
+bar { 
+    status_command i3status #--config ~/.config/i3status-config
 }
 
+for_window [title="i3-float-window"] floating enable
 
-for_window [title="GL Playground"] floating enable
-assign [title="GL Playground"] 2
+assign [title="^\[1\]"] 1
+assign [title="^\[2\]"] 2
+assign [title="^\[3\]"] 3
+assign [title="^\[4\]"] 4
+assign [title="^\[5\]"] 5
+assign [title="^\[6\]"] 6
+assign [title="^\[7\]"] 7
+assign [title="^\[8\]"] 8
+assign [title="^\[9\]"] 9
+assign [title="^\[0\]"] 10
 
-for_window [title="Game"] floating enable
-assign [title="Game"] 2
-
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/oma/.config/i3/ws-1.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/oma/.config/i3/layout-2.json'"
 exec --no-startup-id "firefox"
 exec --no-startup-id "Telegram"
-exec --no-startup-id "subl"
-exec --no-startup-id "/home/oma/Programs/scripts/jbl-connect.sh"
+exec --no-startup-id "subl /home/oma/Documents/organizer"
 exec --no-startup-id "terminator --title main-terminal -l main"
+
+# exec --no-startup-id "bluetoothctl connect FC:03:9F:63:EA:A7"
 

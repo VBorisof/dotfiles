@@ -1,15 +1,7 @@
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
-endif
-
-if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
+  set backup		" keep a backup file (restore to previous version) if has('persistent_undo') set undofile	" keep an undo file (undo changes after closing) endif endif if &t_Co > 2 || has("gui_running") Switch on highlighting the last used search pattern. set hlsearch
 endif
 
 " Put these in an autocmd group, so that we can delete them easily.
@@ -128,6 +120,7 @@ Plug 'mfussenegger/nvim-jdtls'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'nvim-neotest/nvim-nio'
+Plug 'tpope/vim-surround'
 "" Vim-Session
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-session'
@@ -353,5 +346,15 @@ autocmd FileType html nmap ;3 i<h3></h3><ESC>F<i
 autocmd FileType html nmap ;4 i<h4></h4><ESC>F<i
 autocmd FileType html nmap ;5 i<h5></h5><ESC>F<i
 autocmd FileType html nmap ;6 i<h6></h6><ESC>F<i
+
+"""""""""""""""""""""""""""""""""""
+" C
+"""""""""""""""""""""""""""""""""""
+
+augroup header_template
+    autocmd!
+    autocmd BufNewFile *.h 0r ~/.config/nvim/templates/c_header.h | silent %s/\$name\$/\=toupper(expand('%:r')).'_H'
+    autocmd BufNewFile *.c 0r ~/.config/nvim/templates/c_source.c | silent %s/\$name\$/\=expand('%:r')
+augroup END
 
 lua require('init')

@@ -1,0 +1,105 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 785,
+       "width": 616,
+       "x": 2654,
+       "y": 429
+    },
+    "marks": [],
+    "name": "Telegram",
+    "percent": 0.2,
+    "swallows": [
+       {
+       "class": "^TelegramDesktop$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splith split container with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "marks": [],
+    "percent": 0.8,
+    "type": "con",
+    "nodes": [
+        {
+            // stacked split container with 3 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "stacked",
+            "marks": [],
+            "percent": 1,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 981,
+                       "width": 1340,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "marks": [],
+                    "name": "Mozilla Firefox",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                       "class": "^firefox$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 996,
+                       "width": 1532,
+                       "x": 384,
+                       "y": 373
+                    },
+                    "marks": [],
+                    "name": "Sublime Text",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                       "class": "^Sublime_text$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "none",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 451,
+                       "width": 722,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "marks": [],
+                    "name": "main-terminal",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                       "class": "^Terminator$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+

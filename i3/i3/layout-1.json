@@ -1,0 +1,102 @@
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 956,
+       "width": 1532,
+       "x": 386,
+       "y": 413
+    },
+    "marks": [],
+    "name": "Telegram",
+    "percent": 0.419306540583136,
+    "swallows": [
+       {
+        "class": "^TelegramDesktop$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "marks": [],
+    "percent": 0.580693459416864,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "marks": [],
+            "percent": 1,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 996,
+                       "width": 1532,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "marks": [],
+                    "name": "Mozilla Firefox",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                        "class": "^firefox$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 996,
+                       "width": 1532,
+                       "x": 384,
+                       "y": 373
+                    },
+                    "marks": [],
+                    "name": "Sublime Text",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                        "class": "^Sublime_text$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "none",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 451,
+                       "width": 722,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "marks": [],
+                    "name": "main-terminal",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                        "class": "^Terminator$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+

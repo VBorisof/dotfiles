@@ -24,7 +24,7 @@
     icon_bell = False
     background_darkness = 0.78
     cursor_shape = ibeam
-    font = Fixedsys Excelsior 13
+    font = BigBlueTerm437 Nerd Font Mono 13
     foreground_color = "#00ff00"
     show_titlebar = False
     scrollbar_position = hidden
@@ -338,4 +338,87 @@
       profile = default
       uuid = 908d78f0-16d4-4a3b-acb9-afff0d4aac7b
       command = echo 'u   HE6blBAEMOE   6blBAET ! ' | figlet -f slant | lolcat && zsh
+  [[New Layout 1]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 2944:343
+      maximised = False
+      fullscreen = False
+      size = 1532, 996
+      title = main-terminal
+      last_active_term = 908d78f0-16d4-4a3b-acb9-afff0d4aac7b
+      last_active_window = False
+    [[[child1]]]
+      type = VPaned
+      parent = child0
+      order = 0
+      position = 225
+      ratio = 0.22704339051463168
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = a13b8be8-93a7-4725-923b-baae6c6b387c
+    [[[child3]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 43
+      ratio = 0.056504599211563734
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = default
+      uuid = 5fac7729-4023-4af7-81ea-4e0dc10ca5a5
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      profile = default
+      uuid = 908d78f0-16d4-4a3b-acb9-afff0d4aac7b
+    [[[child6]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = False
+      fullscreen = False
+      size = 1280, 1418
+      title = oma@petram:~/Code/BetaProjects/CharlieSpotlight/ACED
+      last_active_window = True
+    [[[child7]]]
+      type = Notebook
+      parent = child6
+      order = 0
+      labels = None, None
+      last_active_term = 1231e2f9-6917-4764-848c-6d8797a8c0b8, 8ae0f456-9923-49c7-a9c4-0f4ab1e952cb
+      active_page = 1
+    [[[terminal8]]]
+      type = Terminal
+      parent = child7
+      order = 0
+      profile = default
+      uuid = 1231e2f9-6917-4764-848c-6d8797a8c0b8
+    [[[child9]]]
+      type = HPaned
+      parent = child7
+      order = 1
+      position = 852
+      ratio = 0.6692851531814611
+    [[[terminal10]]]
+      type = Terminal
+      parent = child9
+      order = 0
+      profile = default
+      uuid = cfdc105e-5a9c-4346-973c-5c1d72986f73
+    [[[terminal11]]]
+      type = Terminal
+      parent = child9
+      order = 1
+      profile = default
+      uuid = 8ae0f456-9923-49c7-a9c4-0f4ab1e952cb
 [plugins]
