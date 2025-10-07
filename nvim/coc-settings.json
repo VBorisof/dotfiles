@@ -1,7 +1,0 @@
-{  
-    "signature": {
-        "preferShownAbove": false
-    },
-    
-    "python.analysis.diagnosticMode": "workspace"
-}
