@@ -29,6 +29,9 @@ map("n", "<c-w>j", ":res -5<CR>", { desc = "Window shrink vertically" })
 map("n", "<c-a>", "ggVG", { desc = "Select all" })
 map({ "n", "i" }, "<c-d>", "Vyp", { desc = "Line duplicate" })
 map({ "i", "c" }, "<c-bs>", "<c-w>", { noremap = true, desc = "Word Ctrl-BS deletes previous." })
+map({ "n" }, "fc", ":foldclose <CR>", { desc = "Fold Close" })
+map({ "n" }, "fo", ":foldopen <CR>", { desc = "Fold Open" })
+map({ "v" }, "fc", ":fold <CR>", { desc = "Fold Create" })
 
 --------------------------
 -- Programming

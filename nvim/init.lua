@@ -35,3 +35,17 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+require("nvim-tree").setup({
+  view = {
+    width = 40,
+  },
+  filters = {
+    dotfiles = false,
+    git_ignored = false
+  }
+})
+
+require("ibl").setup({
+  scope = { show_start = false, show_exact_scope = false }
+})
