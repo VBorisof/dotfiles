@@ -4,7 +4,6 @@ return {
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
-
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -38,21 +37,37 @@ return {
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+      "vim", "lua", "vimdoc",
+      "html", "css"
+      },
+    },
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "omnisharp",
+        "typescript-language-server",
+      },
+    },
+  },
+  {
     "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  }
+    opts = {
+      ensure_installed = {
+        "nvim-lua/plenary.nvim",
+        "neovim/nvim-lspconfig",
+      }
+    },
+  },
+  {
+    "OmniSharp/omnisharp-vim",
+    opts = { },
+  },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
-
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
 }

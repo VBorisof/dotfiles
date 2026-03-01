@@ -34,6 +34,7 @@ require "nvchad.autocmds"
 
 vim.schedule(function()
   require "mappings"
+  require "commands"
 end)
 
 require("nvim-tree").setup({

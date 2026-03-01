@@ -36,7 +36,6 @@ map({ "v" }, "fc", ":fold <CR>", { desc = "Fold Create" })
 --------------------------
 -- Programming
 vim.api.nvim_set_keymap('n', '<C-b>', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true, desc="Go to definition" })
-
 vim.api.nvim_set_keymap('n', '?', '<cmd>lua vim.diagnostic.open_float()<CR>', { silent = true, desc="Window open diagnostic" })
 
 --------------------------
