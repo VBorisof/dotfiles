@@ -18,6 +18,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {
+      lsp_codelens = false, -- Doesn't work currently for some reason
       -- lsp_keymaps = false,
       -- other options
     },
@@ -27,7 +28,7 @@ return {
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*.go",
         callback = function()
-        require('go.format').goimports()
+          require('go.format').goimports()
         end,
         group = format_sync_grp,
       })
